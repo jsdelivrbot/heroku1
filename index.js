@@ -13,6 +13,10 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
+app.get('/surprise', function(req, res) {
+    res.send('Paweł przesyła Basi moc buziaków!  cmok! cmok! cmok!!!');
+})
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
