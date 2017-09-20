@@ -20,7 +20,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/getCup', function(req, res) {
-    fs.readFile('./public/users.json', 'utf-8', function(err, data) {
+    fs.readFile('./public/data/worldcup.json', 'utf-8', function(err, data) {
         if (err) throw err;
 
         var jsonArr = JSON.parse(data);
@@ -30,11 +30,12 @@ app.get('/getCup', function(req, res) {
         // }
         // jsonArr.users.push(newUser);
         console.log(jsonArr);
+        res.send(jsonArr);
 
-        fs.writeFile('./public/users.json', JSON.stringify(jsonArr), 'utf-8', function(err) {
-            if (err) throw err;
-            console.log('Done!')
-        })
+        // fs.writeFile('./public/worldcup.json', JSON.stringify(jsonArr), 'utf-8', function(err) {
+        //     if (err) throw err;
+        //     console.log('Done!')
+        // })
     })
 })
 
