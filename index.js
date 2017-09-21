@@ -8,6 +8,8 @@ var app = express();
 var port = process.env.PORT || 5000;
 app.set('port', port);
 
+app.use(cors());
+
 app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
@@ -29,7 +31,8 @@ app.get('/getCup', function(req, res) {
         // }
         // jsonArr.users.push(newUser);
         // console.log(jsonArr);
-        res.send(jsonArr);
+        // res.send(jsonArr);
+        res.send(JSON.stringify(jsonArr));
 
         // fs.writeFile('./public/worldcup.json', JSON.stringify(jsonArr), 'utf-8', function(err) {
         //     if (err) throw err;
