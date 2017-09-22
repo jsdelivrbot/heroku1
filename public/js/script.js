@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var url = "http://localhost:3000/getcup";
+    var url = "http://localhost:5000/getcup";
 
     $.getJSON(url, function(data) {
         draw(data);
