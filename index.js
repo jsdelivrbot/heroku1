@@ -78,14 +78,6 @@ app.use('/api', apiRoutes);
 
 
 
-app.get('/surprise', function(req, res) {
-    res.send('Paweł przesyła Basi moc buziaków!  cmok! cmok! cmok!!!');
-})
-
-app.get('/czykocha', function(req, res) {
-    res.send('Paweł kocha bardzo Basię!!!');
-})
-
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
     console.log('CORS-enabled web server listening on port  ' + port);

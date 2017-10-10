@@ -10,8 +10,8 @@ function draw(json) {
 
     console.log(json.teams);
     var margin = 50,
-        w = 700,
-        h = 300,
+        w = 1000,
+        h = 500,
         width = w + margin,
         height = h + margin,
         barWidth = 50,
@@ -153,15 +153,25 @@ function draw(json) {
         .on('mouseover', function(d) {
             if (d.country == 'Polska') {
                 d3.select('#title')
+                .style()
+                    .transition()
+                    .delay(300)
+                    .duration(5000)
                     .style({
                         visibility: 'visible'
                     })
+                    // .duration(1000)
+                // .attr("y", 100)
+
             }
             tip.html(message(d));
         })
         .on('mouseout', function() {
             tip.html('');
             d3.select('#title')
+                .transition()
                 .style('visibility', 'hidden')
+
+
         });
 }
