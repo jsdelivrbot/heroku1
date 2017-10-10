@@ -6,7 +6,7 @@ var express = require('express'),
     config = require('./config'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-    //User = require('./models/userModel');
+    User = require('./models/userModel');
 
 var app = express();
 var port = process.env.PORT || 5000;
